@@ -13,10 +13,15 @@
 		insert into tbl_member(userid,userpw,username,email)
 		values(#{userid},#{userpw},#{username},#{email})
 	</insert>
+	
+	<select id="readMember" resultType="MemberVO">
+		select * from tbl_member where userid = #{userid}
+	</select>
+	
+	<select id="readWithPW" resultType="MemberVO">
+		select * from tbl_member where userid = #{userid} and userpw = #{userpw}
+	</select>
 
 
-	<!-- 매개변수가 있을 경우 -->
-
-	<!-- ?이거 대신 #{}해서 {}안에는 전달받는 변수명을 써준다 -->
 
 </mapper>

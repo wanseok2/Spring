@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import javax.inject.Inject;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,12 +16,13 @@ import com.wan.app.domain.MemberVO;
 public class MemberDAOImplTest {
 	@Inject
 	private MemberDAO dao;
-	@Test
+	
+	@Ignore @Test
 	public void testGetTime() {
 		System.out.println("getTime()°á°ú : " + dao.getTime());
 	}
 
-	@Test
+	@Ignore @Test
 	public void testInsertMember() {
 		MemberVO vo = new MemberVO();
 		vo.setEmail("aaa@aaa");
@@ -31,4 +33,16 @@ public class MemberDAOImplTest {
 		dao.insertMember(vo);
 	}
 
+	@Ignore @Test
+	public void testReadMember() throws Exception {
+		System.out.println(dao.readMember("bbb"));
+		
+	}
+	
+	@Test
+	public void testReadWithPW() throws Exception {
+	
+		System.out.println(dao.readWithPW("bbb", "1111"));
+	}
+	
 }
