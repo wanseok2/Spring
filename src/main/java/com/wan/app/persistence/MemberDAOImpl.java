@@ -36,7 +36,14 @@ public class MemberDAOImpl implements MemberDAO {
 		Map<String,Object> paramMap = new HashMap<String , Object>();
 		paramMap.put("userid",userid);
 		paramMap.put("userpw",userpw);
-		return sqlSession.selectOne(NAMESPACE+".readWithPW",paramMap);
+		MemberVO vo =  sqlSession.selectOne(NAMESPACE+".readWithPW",paramMap);
+		
+		if(vo==null){
+			throw new Exception();
+		}
+		return vo;
 	}
+	
+	
 
 }

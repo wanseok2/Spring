@@ -23,4 +23,10 @@
 	<bean class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>	
+	
+	<bean class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<value>message/msg_auth</value>
+		</property>
+	</bean>
 </beans>

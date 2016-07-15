@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page session="true" isELIgnored="false" %>
 <html>
 <head>
 	<title>Home</title>
@@ -23,7 +23,7 @@
       </div>   <!-- /.row -->
     </section><!-- /.content -->
 
-    
+ 
 <%@include file="include/footer.jsp" %>
 </body>
 </html>
